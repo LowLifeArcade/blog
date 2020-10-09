@@ -2,3 +2,13 @@ REDUX NOTES
 
 do installs
 npm install --save redux react-redux axios redux-thunk
+
+ACTIONS
+
+actions must be plain object
+
+REDUX THUNK 
+this helps with async action creators
+async actions happen fast. When you do a fetch or get or whatever it takes a while and teh action will be done before you get the data. So we need this to modify the action
+
+
