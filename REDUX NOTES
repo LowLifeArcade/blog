@@ -12,3 +12,35 @@ this helps with async action creators
 async actions happen fast. When you do a fetch or get or whatever it takes a while and teh action will be done before you get the data. So we need this to modify the action
 
 
+DON"T MUTATE ARRAY
+
+instead we do these commands with 'hi' as the example prop
+
+state.filter(element=> element !== 'hi') // to take elements out of array and make new array which we're supposed to do.
+
+[...state, 'hi'] // to add to array
+
+state.map(el => el === 'hi' ? 'bye':el) //
+
+
+
+Updating, adding or removing props from objects:
+
+{...state, name: 'Sam'}
+
+NOTE: // if we have a profile we do this 
+const profile = { name: 'Sam' }
+undefined
+{...profile,name: 'Alex' }
+{name: "Alex"}
+{...profile, age: 30 }
+{name: "Sam", age: 30}
+
+to REMOVE element from object use lodash library
+-.omit(profile, 'name')
+
+_memoize makes it so you can make a call and then it will remember that and not make a network call again.
+
+const memoizeGetUser = _.memoize(GetUser)
+memoizeGetUser(1)
+this will make a networkcall and anytime ran again it has it remembered and doesnt have to make a network call again
